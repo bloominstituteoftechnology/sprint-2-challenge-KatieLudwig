@@ -29,6 +29,7 @@
       font-size: 3rem;
     }
 
+
   </style>
 </head>
 
@@ -114,9 +115,10 @@
       } 
       
     }
-    
-    
 
+
+
+  
     // 👉 CHALLENGE 2
     function mineSweeper(grid, x, y) {
       // 🧠 mineSweeper takes a grid as its first argument, and coordinates x and y as the second and third args
@@ -137,29 +139,30 @@
       //    * If the player lands on blue, return the string "🟦 🥳"
       // 🧠 Edge cases:
       //    * If the x or y coordinates are under 1 or over 3, return the string "invalid coordinates"
-      const rowNum = grid.length;
-      const colNum = grid[0].length;
-      if (x < 1 || x > rowNum || y < 1 || y > colNum) {
-          return "invalid coordinates";
-        }
-        const coordinateX = x - 1;
-        const coordinateY = y - 1;
-        const squareValue = grid[coordinateX][coordinateY];
-        if (squareValue === "🟥") {
-          return "🟥 💀";
-        } else if (squareValue === "🟦") {
-          return "🟦 🥳";
-        }
-        return "invalid coordinates";
-      // if ((x < 1 || x > 3) || (y < 1 || y > 3)) {
-      //   return "invalid coordinates"
-      // } 
-      // if (grid[x-1][y-1] === "🟥"){
-      //   return "🟥 💀";
-      // }
-      // if (grid[x-1][y-1] === "🟦"){
-      //   return "🟦 🥳";
-      // }
+      // const rowNum = grid.length;
+      // const colNum = grid[0].length;
+      // if (x < 1 || x > rowNum || y < 1 || y > colNum) {
+      //     return "invalid coordinates";
+      //   }
+      //   const coordinateX = x - 1;
+      //   const coordinateY = y - 1;
+      //   const squareValue = grid[coordinateX][coordinateY];
+      //   if (squareValue === "🟥") {
+      //     return "🟥 💀";
+      //   } else if (squareValue === "🟦") {
+      //     return "🟦 🥳";
+      //   }
+      //   return "invalid coordinates";
+      x = x - 1;
+      y = y - 1
+       if ((y < 0 || y > 2) || (x < 0 || x > 2)) {
+        return "invalid coordinates"
+       } 
+       if (grid[y][x] === "🟥"){
+         return "🟥 💀";
+       } else {
+         return "🟦 🥳";
+       }
     }
     
   
